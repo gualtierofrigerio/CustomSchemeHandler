@@ -20,6 +20,8 @@
 		25CC533A2775E027005709C7 /* SQLiteWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 25CC53392775E027005709C7 /* SQLiteWrapper.m */; };
 		25CC533E2775E0E4005709C7 /* WebViewHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CC533D2775E0E4005709C7 /* WebViewHandler.swift */; };
 		25CC53402775E189005709C7 /* SQLiteSchemeHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CC533F2775E189005709C7 /* SQLiteSchemeHandler.swift */; };
+		25CC534427760E59005709C7 /* SchemeHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CC534327760E59005709C7 /* SchemeHandler.swift */; };
+		25CC534627762B8E005709C7 /* AssetsSchemeHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CC534527762B8E005709C7 /* AssetsSchemeHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		25CC533B2775E05C005709C7 /* SQLiteWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQLiteWrapper.h; sourceTree = "<group>"; };
 		25CC533D2775E0E4005709C7 /* WebViewHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewHandler.swift; sourceTree = "<group>"; };
 		25CC533F2775E189005709C7 /* SQLiteSchemeHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteSchemeHandler.swift; sourceTree = "<group>"; };
+		25CC534327760E59005709C7 /* SchemeHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchemeHandler.swift; sourceTree = "<group>"; };
+		25CC534527762B8E005709C7 /* AssetsSchemeHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsSchemeHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +158,8 @@
 		25CC534227760CE1005709C7 /* SchemeHandlers */ = {
 			isa = PBXGroup;
 			children = (
+				25CC534327760E59005709C7 /* SchemeHandler.swift */,
+				25CC534527762B8E005709C7 /* AssetsSchemeHandler.swift */,
 				25CC533F2775E189005709C7 /* SQLiteSchemeHandler.swift */,
 			);
 			path = SchemeHandlers;
@@ -292,8 +298,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				25CC53102775DFDE005709C7 /* CustomSchemeHandler.xcdatamodeld in Sources */,
+				25CC534427760E59005709C7 /* SchemeHandler.swift in Sources */,
 				25CC530A2775DFDE005709C7 /* ViewController.swift in Sources */,
 				25CC533E2775E0E4005709C7 /* WebViewHandler.swift in Sources */,
+				25CC534627762B8E005709C7 /* AssetsSchemeHandler.swift in Sources */,
 				25CC53062775DFDE005709C7 /* AppDelegate.swift in Sources */,
 				25CC53402775E189005709C7 /* SQLiteSchemeHandler.swift in Sources */,
 				25CC53082775DFDE005709C7 /* SceneDelegate.swift in Sources */,
@@ -484,7 +492,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -515,7 +523,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
