@@ -16,6 +16,7 @@ class WebViewHandler: NSObject {
         
         let configuration = WKWebViewConfiguration()
         configuration.preferences = preferences
+        configuration.setValue(true, forKey: "allowUniversalAccessFromFileURLs")
         
         for entry in handlers {
             configuration.setURLSchemeHandler(entry.schemeHandler,
