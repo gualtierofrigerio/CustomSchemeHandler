@@ -14,7 +14,7 @@ class AssetsSchemeHandler: NSObject, SchemeHandler {
         guard let url = urlSchemeTask.request.url,
               let fileUrl = fileUrlFromUrl(url),
               let mimeType = mimeType(ofFileAtUrl: fileUrl),
-              let data = try? Data(contentsOf: url) else { return }
+              let data = try? Data(contentsOf: fileUrl) else { return }
        
         let response = HTTPURLResponse(url: url,
                                        mimeType: mimeType,
@@ -32,8 +32,10 @@ class AssetsSchemeHandler: NSObject, SchemeHandler {
     // MARK: - Private
     
     private func fileUrlFromUrl(_ url: URL) -> URL? {
-        Bundle.main.url(forResource: url.absoluteString,
-                        withExtension: "")
+        guard let assetName = url.host else { return nil }
+        return Bundle.main.url(forResource: assetName,
+                               withExtension: "",
+                               subdirectory: "assets")
     }
     
     private func mimeType(ofFileAtUrl url: URL) -> String? {
