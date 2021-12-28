@@ -11,13 +11,16 @@ import WebKit
 class WebViewHandler: NSObject {
     let webView: WKWebView
     
-    override init() {
+    init(withSchemeHandlers handlers: [SchemeHandlerEntry]) {
         let preferences = WKPreferences()
-        preferences.javaScriptEnabled = true
-        let configuration = WKWebViewConfiguration()
         
+        let configuration = WKWebViewConfiguration()
         configuration.preferences = preferences
-        configuration.setURLSchemeHandler(SchemeHandler(), forURLScheme: "asset")
+        
+        for entry in handlers {
+            configuration.setURLSchemeHandler(entry.schemeHandler,
+                                              forURLScheme: entry.urlScheme)
+        }
         
         webView = WKWebView(frame: CGRect.zero, configuration: configuration)
         webView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -25,6 +28,10 @@ class WebViewHandler: NSObject {
         
         super.init()
         webView.navigationDelegate = self
+    }
+    
+    func loadRequest(_ request: URLRequest) {
+        webView.load(request)
     }
 }
 
