@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		25119D6F2779EF8100D34F2E /* assets in Resources */ = {isa = PBXBuildFile; fileRef = 25119D6E2779EF8000D34F2E /* assets */; };
 		25CC53062775DFDE005709C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CC53052775DFDE005709C7 /* AppDelegate.swift */; };
 		25CC53082775DFDE005709C7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CC53072775DFDE005709C7 /* SceneDelegate.swift */; };
 		25CC530A2775DFDE005709C7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CC53092775DFDE005709C7 /* ViewController.swift */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		25119D6E2779EF8000D34F2E /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = assets; sourceTree = "<group>"; };
 		25CC53022775DFDE005709C7 /* CustomSchemeHandler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomSchemeHandler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25CC53052775DFDE005709C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		25CC53072775DFDE005709C7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 		25CC52F92775DFDE005709C7 = {
 			isa = PBXGroup;
 			children = (
+				25119D6E2779EF8000D34F2E /* assets */,
 				25CC53042775DFDE005709C7 /* CustomSchemeHandler */,
 				25CC531E2775DFE1005709C7 /* CustomSchemeHandlerTests */,
 				25CC53282775DFE1005709C7 /* CustomSchemeHandlerUITests */,
@@ -271,6 +274,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				25CC53152775DFE0005709C7 /* LaunchScreen.storyboard in Resources */,
+				25119D6F2779EF8100D34F2E /* assets in Resources */,
 				25CC53122775DFE0005709C7 /* Assets.xcassets in Resources */,
 				25CC530D2775DFDE005709C7 /* Main.storyboard in Resources */,
 			);

@@ -1,0 +1,25 @@
+<html>
+    <script>
+        function getData() {
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', "sqlite://products", true);
+            xhr.responseType = 'json';
+            xhr.onload = function() {
+              var status = xhr.status;
+              if (status === 200) {
+                console.log(xhr.response);
+              } else {
+                console.log("error")
+              }
+              document.getElementById("results").innerHTML = JSON.stringify(xhr.response);
+            };
+            xhr.send();
+        }
+    </script>
+    <body>
+        <h2>Test page</h2>
+        <img src="assets://test.jpg"></img>
+        <div id="button" onclick="getData()">Get data</div>
+        <div id="results"></div>
+    </body>
+</html>
