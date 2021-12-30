@@ -2,7 +2,7 @@
     <script>
         function getData() {
             var xhr = new XMLHttpRequest();
-            xhr.open('GET', "sqlite://products", true);
+            xhr.open('GET', "sqlite://products?price=1234", true);
             xhr.responseType = 'json';
             xhr.onload = function() {
               var status = xhr.status;
@@ -15,11 +15,29 @@
             };
             xhr.send();
         }
+        
+        function insertData() {
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', "sqlite://products", true);
+            xhr.responseType = 'json';
+            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            xhr.onload = function() {
+              var status = xhr.status;
+              if (status === 200) {
+                console.log(xhr.response);
+              } else {
+                console.log("error")
+              }
+              document.getElementById("results").innerHTML = JSON.stringify(xhr.response);
+            };
+            xhr.send(JSON.stringify({"name" : "test", "price" : "1234"}));
+        }
     </script>
     <body>
         <h2>Test page</h2>
         <img src="assets://test.jpg"></img>
         <div id="button" onclick="getData()">Get data</div>
+        <div id="button" onclick="insertData()">Insert data</div>
         <div id="results"></div>
     </body>
 </html>
