@@ -23,6 +23,9 @@
 		25CC53402775E189005709C7 /* SQLiteSchemeHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CC533F2775E189005709C7 /* SQLiteSchemeHandler.swift */; };
 		25CC534427760E59005709C7 /* SchemeHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CC534327760E59005709C7 /* SchemeHandler.swift */; };
 		25CC534627762B8E005709C7 /* AssetsSchemeHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CC534527762B8E005709C7 /* AssetsSchemeHandler.swift */; };
+		25E436F5277CC809008ED164 /* HTTPURLResponse+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E436F4277CC809008ED164 /* HTTPURLResponse+ext.swift */; };
+		25E436F8277CC96A008ED164 /* JSONSerialization+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E436F7277CC96A008ED164 /* JSONSerialization+ext.swift */; };
+		25E436FA277CCBEE008ED164 /* SQLQueryHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E436F9277CCBEE008ED164 /* SQLQueryHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +68,9 @@
 		25CC533F2775E189005709C7 /* SQLiteSchemeHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteSchemeHandler.swift; sourceTree = "<group>"; };
 		25CC534327760E59005709C7 /* SchemeHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchemeHandler.swift; sourceTree = "<group>"; };
 		25CC534527762B8E005709C7 /* AssetsSchemeHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsSchemeHandler.swift; sourceTree = "<group>"; };
+		25E436F4277CC809008ED164 /* HTTPURLResponse+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HTTPURLResponse+ext.swift"; sourceTree = "<group>"; };
+		25E436F7277CC96A008ED164 /* JSONSerialization+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONSerialization+ext.swift"; sourceTree = "<group>"; };
+		25E436F9277CCBEE008ED164 /* SQLQueryHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLQueryHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +124,7 @@
 			children = (
 				25CC53052775DFDE005709C7 /* AppDelegate.swift */,
 				25CC53072775DFDE005709C7 /* SceneDelegate.swift */,
+				25E436F6277CC813008ED164 /* Utils */,
 				25CC534227760CE1005709C7 /* SchemeHandlers */,
 				25CC53092775DFDE005709C7 /* ViewController.swift */,
 				25CC533D2775E0E4005709C7 /* WebViewHandler.swift */,
@@ -154,6 +161,7 @@
 			children = (
 				25CC53392775E027005709C7 /* SQLiteWrapper.m */,
 				25CC533B2775E05C005709C7 /* SQLiteWrapper.h */,
+				25E436F9277CCBEE008ED164 /* SQLQueryHelper.swift */,
 			);
 			path = SQLiteWrapper;
 			sourceTree = "<group>";
@@ -166,6 +174,15 @@
 				25CC533F2775E189005709C7 /* SQLiteSchemeHandler.swift */,
 			);
 			path = SchemeHandlers;
+			sourceTree = "<group>";
+		};
+		25E436F6277CC813008ED164 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				25E436F4277CC809008ED164 /* HTTPURLResponse+ext.swift */,
+				25E436F7277CC96A008ED164 /* JSONSerialization+ext.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -303,11 +320,14 @@
 			files = (
 				25CC53102775DFDE005709C7 /* CustomSchemeHandler.xcdatamodeld in Sources */,
 				25CC534427760E59005709C7 /* SchemeHandler.swift in Sources */,
+				25E436F5277CC809008ED164 /* HTTPURLResponse+ext.swift in Sources */,
 				25CC530A2775DFDE005709C7 /* ViewController.swift in Sources */,
 				25CC533E2775E0E4005709C7 /* WebViewHandler.swift in Sources */,
 				25CC534627762B8E005709C7 /* AssetsSchemeHandler.swift in Sources */,
+				25E436F8277CC96A008ED164 /* JSONSerialization+ext.swift in Sources */,
 				25CC53062775DFDE005709C7 /* AppDelegate.swift in Sources */,
 				25CC53402775E189005709C7 /* SQLiteSchemeHandler.swift in Sources */,
+				25E436FA277CCBEE008ED164 /* SQLQueryHelper.swift in Sources */,
 				25CC53082775DFDE005709C7 /* SceneDelegate.swift in Sources */,
 				25CC533A2775E027005709C7 /* SQLiteWrapper.m in Sources */,
 			);
