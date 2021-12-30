@@ -13,7 +13,7 @@
 
 @interface SQLiteWrapper()
 {
-    
+    sqlite3 *_database;
 }
 
 - (sqlite3 *) openDatabase;
@@ -80,10 +80,14 @@
 
 - (sqlite3 *)openDatabase {
     sqlite3 *database;
+    if (_database != nil) {
+        return _database;
+    }
     
     int error = sqlite3_open([_path UTF8String], &database);
     if(error == SQLITE_OK)
     {
+        _database = database;
         return database;
     }
     
