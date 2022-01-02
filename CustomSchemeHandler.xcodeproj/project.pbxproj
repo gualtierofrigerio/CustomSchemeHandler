@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		25119D6F2779EF8100D34F2E /* assets in Resources */ = {isa = PBXBuildFile; fileRef = 25119D6E2779EF8000D34F2E /* assets */; };
+		25AE7EB82782068D00D467F3 /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25AE7EB72782068D00D467F3 /* CoreDataHelper.swift */; };
+		25AE7EBB27820B8500D467F3 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25AE7EBA27820B8500D467F3 /* Product.swift */; };
 		25CC53062775DFDE005709C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CC53052775DFDE005709C7 /* AppDelegate.swift */; };
 		25CC53082775DFDE005709C7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CC53072775DFDE005709C7 /* SceneDelegate.swift */; };
 		25CC530A2775DFDE005709C7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CC53092775DFDE005709C7 /* ViewController.swift */; };
@@ -23,6 +25,7 @@
 		25CC53402775E189005709C7 /* SQLiteSchemeHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CC533F2775E189005709C7 /* SQLiteSchemeHandler.swift */; };
 		25CC534427760E59005709C7 /* SchemeHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CC534327760E59005709C7 /* SchemeHandler.swift */; };
 		25CC534627762B8E005709C7 /* AssetsSchemeHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CC534527762B8E005709C7 /* AssetsSchemeHandler.swift */; };
+		25D6FDFD277E0B5800E4D1CE /* CoreDataSchemeHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D6FDFC277E0B5800E4D1CE /* CoreDataSchemeHandler.swift */; };
 		25E436F5277CC809008ED164 /* HTTPURLResponse+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E436F4277CC809008ED164 /* HTTPURLResponse+ext.swift */; };
 		25E436F8277CC96A008ED164 /* JSONSerialization+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E436F7277CC96A008ED164 /* JSONSerialization+ext.swift */; };
 		25E436FA277CCBEE008ED164 /* SQLQueryHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E436F9277CCBEE008ED164 /* SQLQueryHelper.swift */; };
@@ -47,6 +50,8 @@
 
 /* Begin PBXFileReference section */
 		25119D6E2779EF8000D34F2E /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = assets; sourceTree = "<group>"; };
+		25AE7EB72782068D00D467F3 /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
+		25AE7EBA27820B8500D467F3 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		25CC53022775DFDE005709C7 /* CustomSchemeHandler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomSchemeHandler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25CC53052775DFDE005709C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		25CC53072775DFDE005709C7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +73,7 @@
 		25CC533F2775E189005709C7 /* SQLiteSchemeHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteSchemeHandler.swift; sourceTree = "<group>"; };
 		25CC534327760E59005709C7 /* SchemeHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchemeHandler.swift; sourceTree = "<group>"; };
 		25CC534527762B8E005709C7 /* AssetsSchemeHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsSchemeHandler.swift; sourceTree = "<group>"; };
+		25D6FDFC277E0B5800E4D1CE /* CoreDataSchemeHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataSchemeHandler.swift; sourceTree = "<group>"; };
 		25E436F4277CC809008ED164 /* HTTPURLResponse+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HTTPURLResponse+ext.swift"; sourceTree = "<group>"; };
 		25E436F7277CC96A008ED164 /* JSONSerialization+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONSerialization+ext.swift"; sourceTree = "<group>"; };
 		25E436F9277CCBEE008ED164 /* SQLQueryHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLQueryHelper.swift; sourceTree = "<group>"; };
@@ -98,6 +104,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		25AE7EB92782069800D467F3 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				25AE7EB72782068D00D467F3 /* CoreDataHelper.swift */,
+				25AE7EBA27820B8500D467F3 /* Product.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		25CC52F92775DFDE005709C7 = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +139,7 @@
 			children = (
 				25CC53052775DFDE005709C7 /* AppDelegate.swift */,
 				25CC53072775DFDE005709C7 /* SceneDelegate.swift */,
+				25AE7EB92782069800D467F3 /* CoreData */,
 				25E436F6277CC813008ED164 /* Utils */,
 				25CC534227760CE1005709C7 /* SchemeHandlers */,
 				25CC53092775DFDE005709C7 /* ViewController.swift */,
@@ -169,8 +185,9 @@
 		25CC534227760CE1005709C7 /* SchemeHandlers */ = {
 			isa = PBXGroup;
 			children = (
-				25CC534327760E59005709C7 /* SchemeHandler.swift */,
 				25CC534527762B8E005709C7 /* AssetsSchemeHandler.swift */,
+				25D6FDFC277E0B5800E4D1CE /* CoreDataSchemeHandler.swift */,
+				25CC534327760E59005709C7 /* SchemeHandler.swift */,
 				25CC533F2775E189005709C7 /* SQLiteSchemeHandler.swift */,
 			);
 			path = SchemeHandlers;
@@ -320,13 +337,16 @@
 			files = (
 				25CC53102775DFDE005709C7 /* CustomSchemeHandler.xcdatamodeld in Sources */,
 				25CC534427760E59005709C7 /* SchemeHandler.swift in Sources */,
+				25AE7EBB27820B8500D467F3 /* Product.swift in Sources */,
 				25E436F5277CC809008ED164 /* HTTPURLResponse+ext.swift in Sources */,
 				25CC530A2775DFDE005709C7 /* ViewController.swift in Sources */,
 				25CC533E2775E0E4005709C7 /* WebViewHandler.swift in Sources */,
+				25D6FDFD277E0B5800E4D1CE /* CoreDataSchemeHandler.swift in Sources */,
 				25CC534627762B8E005709C7 /* AssetsSchemeHandler.swift in Sources */,
 				25E436F8277CC96A008ED164 /* JSONSerialization+ext.swift in Sources */,
 				25CC53062775DFDE005709C7 /* AppDelegate.swift in Sources */,
 				25CC53402775E189005709C7 /* SQLiteSchemeHandler.swift in Sources */,
+				25AE7EB82782068D00D467F3 /* CoreDataHelper.swift in Sources */,
 				25E436FA277CCBEE008ED164 /* SQLQueryHelper.swift in Sources */,
 				25CC53082775DFDE005709C7 /* SceneDelegate.swift in Sources */,
 				25CC533A2775E027005709C7 /* SQLiteWrapper.m in Sources */,
