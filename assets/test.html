@@ -32,12 +32,47 @@
             };
             xhr.send(JSON.stringify({"name" : "test", "price" : "1234"}));
         }
+        
+        function getCoreData() {
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', "coredata://products?price=2222", true);
+            xhr.responseType = 'json';
+            xhr.onload = function() {
+              var status = xhr.status;
+              if (status === 200) {
+                console.log(xhr.response);
+              } else {
+                console.log("error")
+              }
+              document.getElementById("results").innerHTML = JSON.stringify(xhr.response);
+            };
+            xhr.send();
+        }
+        
+        function insertCoreData() {
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', "coredata://products", true);
+            xhr.responseType = 'json';
+            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            xhr.onload = function() {
+              var status = xhr.status;
+              if (status === 200) {
+                console.log(xhr.response);
+              } else {
+                console.log("error")
+              }
+              document.getElementById("results").innerHTML = JSON.stringify(xhr.response);
+            };
+            xhr.send(JSON.stringify({"name" : "test2", "price" : "2222"}));
+        }
     </script>
     <body>
         <h2>Test page</h2>
         <img src="assets://test.jpg"></img>
         <div id="button" onclick="getData()">Get data</div>
         <div id="button" onclick="insertData()">Insert data</div>
+        <div id="button" onclick="getCoreData()">Get Coredata</div>
+        <div id="button" onclick="insertCoreData()">Insert CoreData</div>
         <div id="results"></div>
     </body>
 </html>
