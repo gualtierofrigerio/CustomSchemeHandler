@@ -41,6 +41,11 @@ class ViewController: UIViewController {
         let assetsHandler = AssetsSchemeHandler()
         let entry = SchemeHandlerEntry(schemeHandler: assetsHandler, urlScheme: "assets")
         handlers.append(entry)
+        
+        let coreDataHandler = CoreDataSchemeHandler()
+        let coreDataEntry = SchemeHandlerEntry(schemeHandler: coreDataHandler,
+                                               urlScheme: "coredata")
+        handlers.append(coreDataEntry)
     }
 }
 
