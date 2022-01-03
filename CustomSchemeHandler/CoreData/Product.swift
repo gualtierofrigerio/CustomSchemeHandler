@@ -8,15 +8,12 @@
 import CoreData
 import Foundation
 
-class Product: NSManagedObject, Decodable {
+public class Product: NSManagedObject, Decodable {
     @NSManaged public var name: String
     @NSManaged public var price: String
     
-    required convenience init(from decoder: Decoder) throws {
-        guard let managedObjectContextKey = CodingUserInfoKey(rawValue: "managedObjectContext") else {
-            fatalError("cannot find manageObjectContext in info key")
-        }
-        guard let managedObjectContext = decoder.userInfo[managedObjectContextKey] as? NSManagedObjectContext else {
+    public required convenience init(from decoder: Decoder) throws {
+        guard let managedObjectContext = decoder.userInfo[.managedObjectContext] as? NSManagedObjectContext else {
             fatalError("cannot Retrieve context")
         }
         guard let entity = NSEntityDescription.entity(forEntityName: "Product",
@@ -32,7 +29,20 @@ class Product: NSManagedObject, Decodable {
         if let priceString = try values.decodeIfPresent(String.self, forKey: .price) {
             self.price = priceString
         }
-        
+    }
+}
+
+extension Product: Encodable {
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(self.name, forKey: .name)
+        try container.encode(self.price, forKey: .price)
+    }
+}
+
+extension Product {
+    func toDictionary() -> [String:String] {
+        ["name" : name, "price" : price]
     }
 }
 
