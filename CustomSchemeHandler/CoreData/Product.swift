@@ -9,6 +9,11 @@ import CoreData
 import Foundation
 
 public class Product: NSManagedObject, Decodable {
+    enum CodingKeys: String, CodingKey {
+        case name
+        case price
+    }
+    
     @NSManaged public var name: String
     @NSManaged public var price: String
     
@@ -44,9 +49,4 @@ extension Product {
     func toDictionary() -> [String:String] {
         ["name" : name, "price" : price]
     }
-}
-
-fileprivate enum CodingKeys: String, CodingKey {
-    case name
-    case price
 }
