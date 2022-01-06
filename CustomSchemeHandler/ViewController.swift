@@ -42,10 +42,12 @@ class ViewController: UIViewController {
         let entry = SchemeHandlerEntry(schemeHandler: assetsHandler, urlScheme: "assets")
         handlers.append(entry)
         
-        let coreDataHandler = CoreDataSchemeHandler()
-        let coreDataEntry = SchemeHandlerEntry(schemeHandler: coreDataHandler,
-                                               urlScheme: "coredata")
-        handlers.append(coreDataEntry)
+        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+            let coreDataHandler = CoreDataSchemeHandler(managedContext: appDelegate.persistentContainer.viewContext)
+            let coreDataEntry = SchemeHandlerEntry(schemeHandler: coreDataHandler,
+                                                   urlScheme: "coredata")
+            handlers.append(coreDataEntry)
+        }
     }
 }
 
