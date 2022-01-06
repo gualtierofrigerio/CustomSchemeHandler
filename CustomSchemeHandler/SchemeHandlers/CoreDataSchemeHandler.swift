@@ -10,10 +10,8 @@ import Foundation
 import WebKit
 
 class CoreDataSchemeHandler: NSObject, SchemeHandler {
-    override init() {
-        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
-            managedContext = appDelegate.persistentContainer.viewContext
-        }
+    init(managedContext: NSManagedObjectContext) {
+        self.managedContext = managedContext
     }
     
     func webView(_ webView: WKWebView, start urlSchemeTask: WKURLSchemeTask) {
