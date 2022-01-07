@@ -5,25 +5,50 @@
 //  Created by Gualtiero Frigerio on 24/12/21.
 //
 
+import CoreData
 import XCTest
 @testable import CustomSchemeHandler
+import WebKit
 
 class CustomSchemeHandlerTests: XCTestCase {
+    var coreDataSchemeHandler: CoreDataSchemeHandler!
+    var coreDataTest: CoreDataTest!
+    var schemeHandlerTest: SchemeHandlerTest!
+    var webViewTest: WKWebView!
 
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        coreDataTest = CoreDataTest()
+        coreDataSchemeHandler = CoreDataSchemeHandler(managedContext: coreDataTest.container.viewContext)
+        try coreDataTest.loadTestData()
+        schemeHandlerTest = SchemeHandlerTest(type: .coreData)
+        webViewTest = WKWebView()
     }
 
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    func testCoreDataGet() {
+        let productName = "Name1"
+        guard let task = schemeHandlerTest.schemeTask(forProductName: "Name1") else {
+            XCTFail("Cannot create scheme task")
+            return
+        }
+        guard let data = coreDataTest.data(forProductName: productName) else {
+            XCTFail("Cannot get data for product")
+            return
+        }
+        let expectation = expectation(description: "testCoreDataGet")
+        
+        task.expectData(data: data) { success in
+            XCTAssertTrue(success)
+            expectation.fulfill()
+        }
+        waitForExpectations(timeout: 0.1)
+    }
+    
+    func testCoreDataPost() {
+        
     }
 
     func testPerformanceExample() throws {
