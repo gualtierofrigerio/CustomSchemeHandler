@@ -29,8 +29,17 @@ class SchemeHandlerTest {
         return WKURLSchemeTaskTest(withRequest: URLRequest(url: url))
     }
     
+    func schemeTaskPost(forProductName name: String,
+                        data: Data) -> WKURLSchemeTaskTest? {
+        guard let url = urlForProduct(withName: name) else { return nil }
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.httpBody = data
+        return WKURLSchemeTaskTest(withRequest: request)
+    }
+    
     func urlForProduct(withName name: String) -> URL? {
-        let urlString = schemeString + "://products?name=" + name
+        let urlString = schemeString + "://products?name='\(name)'"
         return URL(string: urlString)
     }
     
