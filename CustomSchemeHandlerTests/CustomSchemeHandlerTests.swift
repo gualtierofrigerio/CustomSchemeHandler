@@ -30,12 +30,12 @@ class CustomSchemeHandlerTests: XCTestCase {
 
     func testCoreDataGet() {
         let productName = "Name1"
-        guard let task = schemeHandlerTest.schemeTask(forProductName: "Name1") else {
-            XCTFail("Cannot create scheme task")
+        guard let data = coreDataTest.dataArray(forProductName: productName) else {
+            XCTFail("Cannot get data for product")
             return
         }
-        guard let data = coreDataTest.data(forProductName: productName) else {
-            XCTFail("Cannot get data for product")
+        guard let task = schemeHandlerTest.schemeTask(forProductName: productName) else {
+            XCTFail("Cannot create scheme task")
             return
         }
         let expectation = expectation(description: "testCoreDataGet")
@@ -44,18 +44,32 @@ class CustomSchemeHandlerTests: XCTestCase {
             XCTAssertTrue(success)
             expectation.fulfill()
         }
-        waitForExpectations(timeout: 0.1)
+        coreDataSchemeHandler.webView(webViewTest, start: task)
+        
+        waitForExpectations(timeout: 1.0)
     }
     
     func testCoreDataPost() {
-        
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+        let productName = "Name2"
+        guard let data = coreDataTest.data(forProductName: productName) else {
+            XCTFail("Cannot get data for product")
+            return
         }
+        guard let task = schemeHandlerTest.schemeTaskPost(forProductName: productName,
+                                                          data: data) else {
+            XCTFail("Cannot create scheme task")
+            return
+        }
+        let expectation = expectation(description: "testCoreDataPost")
+        let successResponse = "success".data(using: .utf8)!
+        
+        task.expectData(data: successResponse) { success in
+            XCTAssertTrue(success)
+            expectation.fulfill()
+        }
+        coreDataSchemeHandler.webView(webViewTest, start: task)
+        
+        waitForExpectations(timeout: 1.0)
     }
 
 }
