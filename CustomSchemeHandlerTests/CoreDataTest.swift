@@ -37,6 +37,11 @@ class CoreDataTest {
         return try? JSONEncoder().encode(product)
     }
     
+    func dataArray(forProductName name: String) -> Data? {
+        let product = try? product(withName: name)
+        return try? JSONEncoder().encode([product])
+    }
+    
     func product(withName name: String) throws -> Product {
         let dictionary = ["name" : name, "price" : "1234"]
         let data = try JSONSerialization.data(withJSONObject: dictionary, options: .fragmentsAllowed)
