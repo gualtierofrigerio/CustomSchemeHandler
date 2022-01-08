@@ -32,9 +32,11 @@ extension WKURLSchemeTaskTest: WKURLSchemeTask {
     
     func didReceive(_ data: Data) {
         if receivedData == nil {
-            receivedData = Data()
+            receivedData = data
         }
-        receivedData?.append(data)
+        else {
+            receivedData?.append(data)
+        }
     }
     
     func didFinish() {
