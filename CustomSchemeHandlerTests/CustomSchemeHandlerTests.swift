@@ -49,6 +49,25 @@ class CustomSchemeHandlerTests: XCTestCase {
         waitForExpectations(timeout: 1.0)
     }
     
+    func testCoreDataGetAsync() async {
+        let productName = "Name1"
+        guard let data = coreDataTest.dataArray(forProductName: productName) else {
+            XCTFail("Cannot get data for product")
+            return
+        }
+        guard let task = schemeHandlerTest.schemeTask(forProductName: productName) else {
+            XCTFail("Cannot create scheme task")
+            return
+        }
+        let success: Bool = await withUnsafeContinuation{ continuation in
+            task.expectData(data: data) { success in
+                continuation.resume(returning: success)
+            }
+            coreDataSchemeHandler.webView(webViewTest, start: task)
+        }
+        XCTAssertTrue(success)
+    }
+    
     func testCoreDataPost() {
         let productName = "Name2"
         guard let data = coreDataTest.data(forProductName: productName) else {
